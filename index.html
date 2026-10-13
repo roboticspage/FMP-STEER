@@ -10,7 +10,7 @@ body { margin: 0; font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI",
 img { max-width: 100%; }
 [hidden] { display: none !important; }
 </style>
-<title>FMP-STEER · Knee, Rope, Backpack</title>
+<title>FMP-STEER · Real-world reinforcement learning</title>
 <style>
 :root {
   color-scheme: light;
@@ -252,21 +252,56 @@ details > *:not(summary) { margin-inline: 18px; }
   .mini.m3 { grid-template-columns: repeat(2, 1fr); }
 }
 </style>
+<style>
+.real-world { display: flex; flex-direction: column; gap: 28px; }
+.real-world .clips { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.real-world .clip video { aspect-ratio: 16 / 9; object-fit: contain; }
+.real-world .cap { display: block; }
+.real-world .cap b { display: block; font-size: 16px; color: var(--ink); }
+.real-world .cap span { font-size: 10px; }
+@media (max-width: 620px) { .real-world .clips { grid-template-columns: 1fr; } }
+</style>
 </head>
 <body>
 <div class="wrap">
 
   <header>
-    <p class="eyebrow">FMP-STEER · Real-world RL · MuJoCo as the real world</p>
-    <h1>Knee, Rope, Backpack</h1>
-    <p class="lede">Three perturbations a Booster T1 could not walk with. Each absorbed by resuming the frozen flow policy's noise prior on <strong>3.5 h</strong> of data collected outside IsaacSim.</p>
+    <p class="eyebrow">FMP-STEER · Real-world reinforcement learning</p>
+    <h1>Learning to adapt in the real world</h1>
+    <p class="lede">Real-world RL on a physical robot under three perturbations: <strong>locked knees, object pulling, and added payload</strong>. Watch the policy at 0, 14, 27, and 40 minutes of real-world data.</p>
+  </header>
+
+  <section class="real-world" aria-labelledby="real-world-title">
+    <div class="task-head" style="--accent: var(--good)"><h2 id="real-world-title">Real-world RL in action</h2><p class="lede">Four checkpoints per task, ordered by cumulative real-world data. Select any clip to play or expand it to full screen.</p></div>
+    <section class="task" aria-label="Locked knees"><div class="task-head" style="--accent: var(--s-knee)"><h3>Locked knees</h3></div><div class="clips">
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/locked-knees/00-min.jpg" aria-label="Locked knees, 0 minutes of real-world data"><source src="assets/real-world/locked-knees/00-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/locked-knees/00-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>0 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/locked-knees/14-min.jpg" aria-label="Locked knees, 14 minutes of real-world data"><source src="assets/real-world/locked-knees/14-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/locked-knees/14-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>14 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/locked-knees/27-min.jpg" aria-label="Locked knees, 27 minutes of real-world data"><source src="assets/real-world/locked-knees/27-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/locked-knees/27-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>27 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/locked-knees/40-min.jpg" aria-label="Locked knees, 40 minutes of real-world data"><source src="assets/real-world/locked-knees/40-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/locked-knees/40-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>40 min</b><span>real-world data</span></figcaption></figure>
+    </div></section>
+    <section class="task" aria-label="Object pulling"><div class="task-head" style="--accent: var(--s-rope)"><h3>Object pulling</h3></div><div class="clips">
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/object-pulling/00-min.jpg" aria-label="Object pulling, 0 minutes of real-world data"><source src="assets/real-world/object-pulling/00-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/object-pulling/00-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>0 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/object-pulling/14-min.jpg" aria-label="Object pulling, 14 minutes of real-world data"><source src="assets/real-world/object-pulling/14-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/object-pulling/14-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>14 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/object-pulling/27-min.jpg" aria-label="Object pulling, 27 minutes of real-world data"><source src="assets/real-world/object-pulling/27-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/object-pulling/27-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>27 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/object-pulling/40-min.jpg" aria-label="Object pulling, 40 minutes of real-world data"><source src="assets/real-world/object-pulling/40-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/object-pulling/40-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>40 min</b><span>real-world data</span></figcaption></figure>
+    </div></section>
+    <section class="task" aria-label="Added payload"><div class="task-head" style="--accent: var(--s-pack)"><h3>Added payload</h3></div><div class="clips">
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/added-payload/00-min.jpg" aria-label="Added payload, 0 minutes of real-world data"><source src="assets/real-world/added-payload/00-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/added-payload/00-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>0 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/added-payload/14-min.jpg" aria-label="Added payload, 14 minutes of real-world data"><source src="assets/real-world/added-payload/14-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/added-payload/14-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>14 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/added-payload/27-min.jpg" aria-label="Added payload, 27 minutes of real-world data"><source src="assets/real-world/added-payload/27-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/added-payload/27-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>27 min</b><span>real-world data</span></figcaption></figure>
+      <figure class="clip"><video controls playsinline muted loop preload="none" poster="assets/real-world/added-payload/40-min.jpg" aria-label="Added payload, 40 minutes of real-world data"><source src="assets/real-world/added-payload/40-min.mp4" type="video/mp4">Your browser does not support video playback. <a href="assets/real-world/added-payload/40-min.mp4">Download the clip</a>.</video><figcaption class="cap"><b>40 min</b><span>real-world data</span></figcaption></figure>
+    </div></section>
+  </section>
+  <section class="panel" aria-labelledby="simulation-title"><h2 id="simulation-title">MuJoCo adaptation experiments</h2>
+    <p class="lede">Three simulated perturbations a Booster T1 could not walk with. Each absorbed by resuming the frozen flow policy's noise prior on <strong>3.5 h</strong> of data collected outside IsaacSim.</p>
     <div class="byline">
       <span><b>Start</b> prior_fixed04_s42 · Isaac iter 1550</span>
       <span><b>Command</b> fixed 0.4 m/s, no yaw, no stand</span>
       <span><b>Round</b> 20k steps ≈ 8.7 min</span>
       <span><b>Budget</b> 24 rounds ≈ 3.5 h</span>
     </div>
-  </header>
+
+  </section>
 
   <section style="display:flex; flex-direction:column; gap:12px">
     <p class="eyebrow">Survival — 30-second episodes finished without falling, out of 10, deployed mean action</p>
